@@ -1,0 +1,100 @@
+.login-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    height: 100vh;
+
+    .info-register {
+        background: url(https://cdn.pixabay.com/photo/2017/03/29/10/17/labrador-2184709_960_720.jpg);
+        background-size: cover;
+        padding-top: 12rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            color: white;
+            font-family: $font-family;
+            font-size: 3rem;
+        }
+        p {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    .info-login {
+        background: url(https://cdn.pixabay.com/photo/2015/03/26/09/43/dog-690176_960_720.jpg);
+        background-size: cover;
+        padding-top: 12rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            color: white;
+            font-family: $font-family;
+            font-size: 3rem;
+        }
+        p {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+    .form-content {
+        padding-top: 6rem;
+        // background: blueviolet;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 3rem;
+            font-family: $font-family;
+            span {
+                color: $blue;
+            }
+        }
+
+        input {
+            height: 50px;
+            width: 300px;
+            margin-bottom: 1rem;
+
+            &::placeholder {
+                font-size: 1.2rem;
+                padding-left: 10px;
+            }
+        }
+
+        button {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 850px) {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .info-login {
+            padding-top: 6rem;
+            .title {
+                font-size: 2rem;
+            }
+            p {
+                padding: 0.4rem;
+            }
+        }
+
+        .info-register {
+            padding-top: 6rem;
+            .title {
+                font-size: 2rem;
+            }
+            p {
+                padding: 0.4rem;
+            }
+        }
+    }
+}
