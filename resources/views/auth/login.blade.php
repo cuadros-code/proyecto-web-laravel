@@ -31,8 +31,14 @@
                 <div class="">
 
                     <div class="">
-                        <input id="password" type="password" class=" @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="current-password" placeholder="Contraseña">
+                        <input 
+                        id="password" 
+                        type="password" 
+                        class=" @error('password') is-invalid @enderror"
+                        name="password" 
+                        required 
+                        autocomplete="current-password" 
+                        placeholder="Contraseña">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -60,6 +66,17 @@
                         </button>
                     </div>
                 </div>
+
+                {{-- <div class="mb-3">
+                    <div class="">
+                        <a 
+                        href="{{ url('login/google') }}"
+                        class="btn btn-danger d-block w-100"
+                        >
+                            {{ __('Google') }}
+                        </a>
+                    </div>
+                </div> --}}
             </form>
             ¿No tienes una cuenta todavía en MiMascota.com?
             <a href="{{ route('register') }}">Regístrate</a>
@@ -69,7 +86,7 @@
 
             <div>
                 <p class="title" >MiMascota.com </p>
-                <p>una plataforma para la adopcion de mascotas</p>
+                <p>una plataforma para la adopción de mascotas</p>
             </div>
 
         </div>

@@ -1,5 +1,57 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Varela+Round);@charset "UTF-8";
 
+.app-title {
+  font-family: "Varela Round", sans-serif;
+}
+
+.app-title span {
+  color: #3490dc;
+}
+
+.content-inicio {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 188, 212, 0.48) 50%);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.content-inicio .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-inicio .banner .info-banner h3 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.content-inicio .banner .info-banner p {
+  color: white;
+  font-weight: 500;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 1.3rem;
+}
+
+.content-inicio .image-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-inicio .image-content img {
+  width: 400px;
+}
+
 .login-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -7,7 +59,7 @@
 }
 
 .login-content .info-register {
-  background: url(https://cdn.pixabay.com/photo/2017/03/29/10/17/labrador-2184709_960_720.jpg);
+  background: url(/images/fondo-2.jpeg?7410fa09d0ea5b14af4e9e86957d4079);
   background-size: cover;
   padding-top: 12rem;
   display: flex;
@@ -118,6 +170,10 @@
   .login-content .info-register p {
     padding: 0.4rem;
   }
+}
+
+.text-area-create {
+  resize: none;
 }
 
 /*!

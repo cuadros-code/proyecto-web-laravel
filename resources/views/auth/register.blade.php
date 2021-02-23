@@ -70,7 +70,7 @@
 
             <div>
                 <p class="title">MiMascota.com </p>
-                <p>una plataforma para la adopcion de mascotas</p>
+                <p>una plataforma para la adopción de mascotas</p>
             </div>
 
         </div>

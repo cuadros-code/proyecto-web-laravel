@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/adopcion', 'AdopcionController@index')->name('adopcion.index');
+
+Route::get('/adopcion/create', 'AdopcionController@create')->name('adopcion.create');
+
+Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
