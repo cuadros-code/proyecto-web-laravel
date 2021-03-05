@@ -4,7 +4,7 @@
     <div class="login-content">
         <div class="form-content">
             <h2>Mi<span>Mascota.com</span></h2>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}" autocomplete="off">
                 @csrf
 
                 <div class="">
@@ -26,6 +26,20 @@
                             value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                         @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="">
+                        <input id="telefono" type="number" class="@error('telefono') is-invalid @enderror" name="telefono"
+                            value="{{ old('telefono') }}" required autocomplete="telefono"
+                            placeholder="Número de télefono">
+
+                        @error('telefono')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -1,4 +1,37 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Varela+Round);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Varela+Round);@import url(https://fonts.googleapis.com/css2?family=RocknRoll+One);@charset "UTF-8";
+
+.container-vista-mascota .nombre-mascota {
+  font-size: 1.5rem;
+}
+
+.container-vista-mascota .mascota-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.container-vista-mascota .mascota-content .foto-mascota {
+  height: 500px;
+  width: 300px;
+}
+
+.container-vista-mascota .mascota-content .foto-mascota p {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.container-vista-mascota .mascota-content .foto-mascota img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 350px;
+  height: 400px;
+}
+
+.container-vista-mascota .mascota-content .info-mascota {
+  background-color: azure;
+  height: 400px;
+}
 
 .app-title {
   font-family: "Varela Round", sans-serif;
@@ -8,12 +41,41 @@
   color: #3490dc;
 }
 
+.nav-link {
+  font-family: "RocknRoll One", sans-serif !important;
+}
+
+.button {
+  background-color: #80b4bd;
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  color: white;
+  font-family: "RocknRoll One", sans-serif;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
+  border: white solid 1px;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #6d949b;
+}
+
+.imagen-mascota {
+  width: 90px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
 .content-inicio {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: rgba(255, 255, 255, 0);
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 188, 212, 0.48) 50%);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 188, 212, 0.48) 40%);
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -27,7 +89,7 @@
 
 .content-inicio .banner .info-banner h3 {
   color: white;
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 800;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -38,7 +100,8 @@
   font-weight: 500;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  padding-bottom: 2rem;
 }
 
 .content-inicio .image-content {
@@ -49,7 +112,26 @@
 }
 
 .content-inicio .image-content img {
-  width: 400px;
+  width: 350px;
+}
+
+@media (max-width: 800px) {
+  .content-inicio {
+    grid-template-columns: 1fr;
+  }
+
+  .content-inicio .banner {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .content-inicio .image-content img {
+    width: 200px;
+  }
+
+  .content-inicio .button-banner {
+    display: contents;
+  }
 }
 
 .login-content {

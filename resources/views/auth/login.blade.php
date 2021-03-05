@@ -4,22 +4,13 @@
     <div class="login-content">
         <div class="form-content">
             <h2>Mi<span>Mascota.com</span></h2>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login') }}" autocomplete="off">
                 @csrf
 
                 <div class="">
                     <div class="">
-                        <input 
-                        id="email" 
-                        type="email" 
-                        class=" @error('email') is-invalid @enderror" 
-                        name="email"
-                        value="{{ old('email') }}" 
-                        required 
-                        autocomplete="email" 
-                        autofocus
-                        placeholder="Email"
-                        >
+                        <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email"
+                            value="kevin@gmail.com" required autofocus placeholder="Email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -31,14 +22,8 @@
                 <div class="">
 
                     <div class="">
-                        <input 
-                        id="password" 
-                        type="password" 
-                        class=" @error('password') is-invalid @enderror"
-                        name="password" 
-                        required 
-                        autocomplete="current-password" 
-                        placeholder="Contraseña">
+                        <input id="password" type="password" class=" @error('password') is-invalid @enderror"
+                            name="password" required placeholder="Contraseña" value="12345678">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -85,7 +70,7 @@
         <div class="info-login">
 
             <div>
-                <p class="title" >MiMascota.com </p>
+                <p class="title">MiMascota.com </p>
                 <p>una plataforma para la adopción de mascotas</p>
             </div>
 

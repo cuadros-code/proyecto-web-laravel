@@ -1,15 +1,18 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round");
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One");
 
 // Variables
-@import 'variables';
+@import "variables";
 
-@import 'globlas';
+@import "mascota";
 
-@import 'home';
+@import "globlas";
 
-@import 'auth';
+@import "home";
+
+@import "auth";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

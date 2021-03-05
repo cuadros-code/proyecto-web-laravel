@@ -22,11 +22,8 @@ Route::get('/adopcion', 'AdopcionController@index')->name('adopcion.index');
 
 Route::get('/adopcion/create', 'AdopcionController@create')->name('adopcion.create');
 
-Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+Route::post('/adopcion', 'AdopcionController@store')->name('adopcion.store');
 
-Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('/adopcion/{adopcion}', 'AdopcionController@show')->name('adopcion.show');
 
 Auth::routes();
-
-
-

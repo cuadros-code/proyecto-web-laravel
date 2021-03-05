@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Adopcion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AdopcionController extends Controller
 {
@@ -12,15 +15,18 @@ class AdopcionController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        return view('adopcion.index');
+        //- adopciones del usuario autenticado
+        $adopciones = auth()->user()->adopciones;
+
+        return view('adopcion.index')->with('adopciones', $adopciones);
     }
 
     /**
@@ -41,7 +47,41 @@ class AdopcionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'mascota' => 'required',
+            'edad' => 'required',
+            'peso' => 'required',
+            'sexo' => 'required',
+            'tipo' => 'required',
+            'descripcion' => 'required',
+            'imagen' => 'image|mimes:jpeg,png,jpg,git,svg|required'
+        ]);
+
+        // $ruta_img = $request['imagen']->store('imagenes', 's3');
+        $ruta_img = $request['imagen']->store('imagenes', 's3');
+
+        auth()->user()->adopciones()->create([
+            'mascota' => $data['mascota'],
+            'edad' => $data['edad'],
+            'peso' => $data['peso'],
+            'sexo' => $data['sexo'],
+            'tipo' => $data['tipo'],
+            'descripcion' => $data['descripcion'],
+            'imagen' => Storage::disk('s3')->url($ruta_img),
+        ]);
+
+        // DB::table('adopcions')->insert([
+        //     'nombre_mascota' => $data['mascota'],
+        //     'edad_mascota' => $data['edad'],
+        //     'peso_mascota' => $data['peso'],
+        //     'sexo_mascota' => $data['sexo'],
+        //     'tipo_mascota' => $data['tipo'],
+        //     'user_id' => Auth::user()->id,
+        //     'descripcion' => $data['descripcion'],
+        //     'imagen' => Storage::disk('s3')->url($ruta_img),
+        // ]);
+
+        return redirect()->action('AdopcionController@index');
     }
 
     /**
@@ -52,7 +92,7 @@ class AdopcionController extends Controller
      */
     public function show(Adopcion $adopcion)
     {
-        //
+        return view('adopcion.show')->with('adopcion', $adopcion);
     }
 
     /**

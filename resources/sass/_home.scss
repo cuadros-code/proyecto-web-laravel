@@ -6,7 +6,7 @@
     background-image: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 188, 212, 0.48) 50%
+        rgba(0, 188, 212, 0.48) 40%
     );
     background-position: center center;
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
         .info-banner {
             h3 {
                 color: white;
-                font-size: 2rem;
+                font-size: 2.1rem;
                 font-weight: 800;
                 padding-left: 3rem;
                 padding-right: 3rem;
@@ -29,20 +29,38 @@
                 font-weight: 500;
                 padding-left: 3rem;
                 padding-right: 3rem;
-                font-size: 1.3rem;
+                font-size: 1.4rem;
+                padding-bottom: 2rem;
             }
         }
     }
 
-    .image-content{
-
+    .image-content {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
 
-        img{
-            width: 400px;
+        img {
+            width: 350px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+        .banner {
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        .image-content {
+            img {
+                width: 200px;
+            }
+        }
+
+        .button-banner {
+            display: contents;
         }
     }
 }

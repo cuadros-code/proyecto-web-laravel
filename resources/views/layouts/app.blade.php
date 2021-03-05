@@ -25,9 +25,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                    <h4 class="app-title" >Mi<span>Mascota.com</span></h4>
+                <a class="navbar-brand mt-1" href="{{ url('/') }}">
+                    <img src="https://mi-mascota.s3.amazonaws.com/estaticos/perro.png" width="30" height="30"
+                        class="d-inline-block align-top" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,22 +38,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item text-center ml-5">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Adoptar') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+
+                            <li class="nav-item text-center">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item text-center">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="{{ route('adopcion.index') }}" class="nav-link">Publicaciones</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a href="{{ route('adopcion.create') }}" class="nav-link">Dar en adopción</a>
@@ -70,11 +76,12 @@
                                     <a class="dropdown-item" href="{{ route('adopcion.index') }}">
                                         {{ __('Perfil') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                                                                                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar Sesión') }}
                                     </a>
-                                    
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                         style="display: none;">
                                         @csrf

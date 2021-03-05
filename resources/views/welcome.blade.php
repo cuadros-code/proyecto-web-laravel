@@ -14,15 +14,16 @@
                 </p>
             </div>
             <div class="button-banner">
-                <a href="" class="btn btn-primary">Adoptar</a>
-                
-                <a href="{{ route('adopcion.create') }}" class="btn btn-primary">Dar en adopción</a>
+                <a href="" class="button">Adoptar</a>
+
+                <a href="{{ route('adopcion.create') }}" class="button">Dar en adopción</a>
             </div>
         </div>
 
 
         <div class="image-content">
-            <img src="https://www.miwuki.com/wp-content/uploads/2020/06/adopta-en-miwuki.png" alt="">
+            {{-- <img src="https://www.miwuki.com/wp-content/uploads/2020/06/adopta-en-miwuki.png" alt=""> --}}
+            <img src="https://mi-mascota.s3.amazonaws.com/estaticos/casa-de-mascotas.png" alt="">
         </div>
 
 
