@@ -53,6 +53,8 @@ class AdopcionController extends Controller
             'peso' => 'required',
             'sexo' => 'required',
             'tipo' => 'required',
+            'vacunado' => 'required',
+            'desparasitado' => 'required',
             'descripcion' => 'required',
             'imagen' => 'image|mimes:jpeg,png,jpg,git,svg|required'
         ]);
@@ -66,6 +68,8 @@ class AdopcionController extends Controller
             'peso' => $data['peso'],
             'sexo' => $data['sexo'],
             'tipo' => $data['tipo'],
+            'vacunado' => $data['vacunado'],
+            'desparasitado' => $data['desparasitado'],
             'descripcion' => $data['descripcion'],
             'imagen' => Storage::disk('s3')->url($ruta_img),
         ]);

@@ -15,13 +15,15 @@ class CreateAdopcionsTable extends Migration
     {
         Schema::create('adopcions', function (Blueprint $table) {
             $table->id();
-            $table->string('mascota');
+            $table->string('mascota')-;
             $table->string('edad');
             $table->string('peso');
             $table->string('sexo');
             $table->string('tipo');
             $table->text('descripcion');
             $table->string('imagen');
+            $table->string('vacunado');
+            $table->string('desparasitado');
             $table->foreignId('user_id')->references('id')->on('users')->comment('el usuario que crea la adopcion');
             $table->timestamps();
         });

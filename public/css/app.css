@@ -7,13 +7,13 @@
 .container-vista-mascota .mascota-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 
 .container-vista-mascota .mascota-content .foto-mascota {
   height: 500px;
-  width: 300px;
+  width: 366px;
 }
 
 .container-vista-mascota .mascota-content .foto-mascota p {
@@ -24,12 +24,44 @@
 .container-vista-mascota .mascota-content .foto-mascota img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 350px;
+  border-radius: 10px;
+  width: 366px;
   height: 400px;
 }
 
 .container-vista-mascota .mascota-content .info-mascota {
-  background-color: azure;
+  border-radius: 10px;
+  border: #c5bfbf solid 1px;
+  height: 400px;
+}
+
+.container-vista-mascota .mascota-content .info-mascota p:first-child {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.container-vista-mascota .mascota-content .info-mascota .campo-info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.8rem;
+}
+
+.container-vista-mascota .mascota-content .info-mascota .campo-info label {
+  flex: 0 0 190px;
+  font-size: 1rem;
+}
+
+.container-vista-mascota .mascota-content .info-mascota .campo-info p {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.container-vista-mascota .mascota-content .descripcion-mascota {
+  border-radius: 10px;
+  border: #c5bfbf solid 1px;
   height: 400px;
 }
 

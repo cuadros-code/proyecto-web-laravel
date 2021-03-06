@@ -8,7 +8,7 @@ class Adopcion extends Model
 {
 
     protected $fillable = [
-        'mascota', 'edad', 'peso', 'sexo', 'tipo', 'descripcion', 'imagen',
+        'mascota', 'edad', 'peso', 'sexo', 'tipo', 'descripcion', 'imagen', 'vacunado', 'desparasitado',
     ];
 
     public function usuario()

@@ -68,6 +68,7 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group row">
                                 <label for="tipo" class="col-lg-4 col-form-label form-control-label">Tipo de mascota</label>
                                 <div class="col-lg-8">
@@ -84,6 +85,39 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="vacunado" class="col-lg-4 col-form-label form-control-label">Vacunado</label>
+                                <div class="col-lg-8">
+                                    <select id="vacunado" name="vacunado" class="form-control" size="0">
+                                        <option value="">Seleccionar</option>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                    @error('vacunado')
+                                        <span class="invalid-feedback d-block" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="desparasitado"
+                                    class="col-lg-4 col-form-label form-control-label">Desparasitado</label>
+                                <div class="col-lg-8">
+                                    <select id="desparasitado" name="desparasitado" class="form-control" size="0">
+                                        <option value="">Seleccionar</option>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                    @error('desparasitado')
+                                        <span class="invalid-feedback d-block" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label form-control-label"
                                     for="descripcion">Descripción</label>
