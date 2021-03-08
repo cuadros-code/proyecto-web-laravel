@@ -29,6 +29,13 @@
   height: 400px;
 }
 
+@media (max-width: 480px) {
+  .container-vista-mascota .mascota-content .foto-mascota img {
+    padding: 15px;
+    border-radius: 10px !important;
+  }
+}
+
 .container-vista-mascota .mascota-content .info-mascota {
   border-radius: 10px;
   border: #c5bfbf solid 1px;
@@ -54,15 +61,53 @@
   font-size: 1rem;
 }
 
+@media (max-width: 480px) {
+  .container-vista-mascota .mascota-content .info-mascota .campo-info label {
+    flex: 0 0 160px;
+  }
+}
+
 .container-vista-mascota .mascota-content .info-mascota .campo-info p {
   flex: 1;
   font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .container-vista-mascota .mascota-content .info-mascota {
+    margin: 30px;
+    position: relative;
+    top: -90px;
+  }
 }
 
 .container-vista-mascota .mascota-content .descripcion-mascota {
   border-radius: 10px;
   border: #c5bfbf solid 1px;
   height: 400px;
+}
+
+@media (max-width: 1000px) {
+  .container-vista-mascota .mascota-content {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-vista-mascota .mascota-content {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+}
+
+.botones-tabla a {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 550px) {
+  .botones-tabla {
+    display: inline-grid;
+  }
 }
 
 .app-title {

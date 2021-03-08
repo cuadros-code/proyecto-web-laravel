@@ -26,4 +26,8 @@ Route::post('/adopcion', 'AdopcionController@store')->name('adopcion.store');
 
 Route::get('/adopcion/{adopcion}', 'AdopcionController@show')->name('adopcion.show');
 
+Route::get('/adopcion/{adopcion}/edit', 'AdopcionController@edit')->name('adopcion.edit');
+
+Route::put('/adopcion/{adopcion}', 'AdopcionController@update')->name('adopcion.update');
+
 Auth::routes();

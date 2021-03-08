@@ -15,7 +15,7 @@ class CreateAdopcionsTable extends Migration
     {
         Schema::create('adopcions', function (Blueprint $table) {
             $table->id();
-            $table->string('mascota')-;
+            $table->string('mascota');
             $table->string('edad');
             $table->string('peso');
             $table->string('sexo');

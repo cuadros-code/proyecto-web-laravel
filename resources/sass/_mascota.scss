@@ -21,6 +21,11 @@
                 border-radius: 10px;
                 width: 366px;
                 height: 400px;
+
+                @media (max-width: 480px) {
+                    padding: 15px;
+                    border-radius: 10px !important;
+                }
             }
         }
 
@@ -42,14 +47,21 @@
                 padding-bottom: 1.8rem;
                 label {
                     flex: 0 0 190px;
-                    // font-weight: bold;
                     font-size: 1rem;
+                    @media (max-width: 480px) {
+                        flex: 0 0 160px;
+                    }
                 }
                 p {
                     flex: 1;
                     font-size: 1rem;
-                    // font-weight: bold;
                 }
+            }
+
+            @media (max-width: 480px) {
+                margin: 30px;
+                position: relative;
+                top: -90px;
             }
         }
 
@@ -58,5 +70,23 @@
             border: rgb(197, 191, 191) solid 1px;
             height: 400px;
         }
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 10px;
+        }
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+    }
+}
+
+.botones-tabla {
+    a {
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 550px) {
+        display: inline-grid;
     }
 }

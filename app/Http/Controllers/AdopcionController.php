@@ -107,7 +107,7 @@ class AdopcionController extends Controller
      */
     public function edit(Adopcion $adopcion)
     {
-        //
+        return view('adopcion.edit')->with('adopcion', $adopcion);
     }
 
     /**
@@ -119,7 +119,18 @@ class AdopcionController extends Controller
      */
     public function update(Request $request, Adopcion $adopcion)
     {
-        //
+        $data = $request->validate([
+            'mascota' => 'required',
+            'edad' => 'required',
+            'peso' => 'required',
+            'sexo' => 'required',
+            'tipo' => 'required',
+            'vacunado' => 'required',
+            'desparasitado' => 'required',
+            'descripcion' => 'required',
+        ]);
+
+        return $data;
     }
 
     /**

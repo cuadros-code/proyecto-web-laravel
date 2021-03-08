@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- {{ $adopcion }} --}}
-    <div class="container mt-4">
+    <div class="container mt-4 ">
 
         <div class="container-vista-mascota">
 
@@ -11,7 +11,7 @@
                 <p class="nombre-mascota">{{ $adopcion->mascota }}</p>
             </div>
 
-            <div class="mascota-content ">
+            <div class="mascota-content p-1">
 
                 <div class="foto-mascota">
 
