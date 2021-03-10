@@ -110,6 +110,11 @@
   }
 }
 
+.logo-inicio {
+  position: relative;
+  bottom: -7px;
+}
+
 .app-title {
   font-family: "Varela Round", sans-serif;
 }
@@ -195,6 +200,7 @@
 @media (max-width: 800px) {
   .content-inicio {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .content-inicio .banner {
@@ -204,11 +210,63 @@
 
   .content-inicio .image-content img {
     width: 200px;
+    padding-bottom: 2rem;
   }
 
   .content-inicio .button-banner {
     display: contents;
   }
+}
+
+.content-footer {
+  padding: 2rem 2rem 1rem 2rem;
+  display: grid;
+  font-size: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content-footer .info-marca {
+  padding: 0 3rem 0 3rem;
+}
+
+.content-footer .info-marca p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.content-footer .info-contacto {
+  padding: 0 3rem 0 3rem;
+}
+
+.content-footer .info-contacto .title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.content-footer .info-contacto p span {
+  font-weight: bold;
+}
+
+.content-footer .info-contacto p i {
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 500px) {
+  .content-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .content-footer .info-contacto {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.copyright {
+  text-align: center;
 }
 
 .login-content {

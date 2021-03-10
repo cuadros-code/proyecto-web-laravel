@@ -16,6 +16,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -25,9 +28,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand mt-1" href="{{ url('/') }}">
-                    <img src="https://mi-mascota.s3.amazonaws.com/estaticos/perro.png" width="30" height="30"
-                        class="d-inline-block align-top" alt="">
+                <a class="navbar-brand  mr-5" href="{{ url('/') }}">
+                    <div class="logo-inicio">
+                        <img src="https://mi-mascota.s3.amazonaws.com/estaticos/perro.png" width="30" height="30"
+                            class="d-inline-block align-top" alt="">
+                        <p class="d-inline-block">MiMascota</p>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item text-center ml-5">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Adoptar') }}</a>
                         </li>
                     </ul>
@@ -48,11 +54,11 @@
                         <!-- Authentication Links -->
                         @guest
 
-                            <li class="nav-item text-center">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item text-center">
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
@@ -78,7 +84,7 @@
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar Sesión') }}
                                     </a>
 
@@ -98,7 +104,12 @@
 
         <main class="">
             @yield('content')
+            @yield('footer')
         </main>
+        {{-- <footer>
+        </footer> --}}
+
+
     </div>
 </body>
 

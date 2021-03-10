@@ -27,7 +27,10 @@
                         <td class="text-center align-middle botones-tabla">
                             <a href="{{ route('adopcion.edit', ['adopcion' => $adopcione->id]) }}"
                                 class="btn btn-primary">Editar</a>
-                            <a href="" class="btn btn-danger">Eliminar</a>
+
+                            <eliminar-receta receta-id={{ $adopcione->id }}>
+                            </eliminar-receta>
+
                             <a href="{{ route('adopcion.show', ['adopcion' => $adopcione->id]) }}"
                                 class="btn btn-info">Ver
                                 publicación</a>

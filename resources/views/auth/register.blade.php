@@ -3,7 +3,7 @@
 @section('content')
     <div class="login-content">
         <div class="form-content">
-            <h2>Mi<span>Mascota.com</span></h2>
+            <h2>Mi<span>Mascota</span></h2>
             <form method="POST" action="{{ route('register') }}" autocomplete="off">
                 @csrf
 

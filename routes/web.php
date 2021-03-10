@@ -30,4 +30,6 @@ Route::get('/adopcion/{adopcion}/edit', 'AdopcionController@edit')->name('adopci
 
 Route::put('/adopcion/{adopcion}', 'AdopcionController@update')->name('adopcion.update');
 
+Route::delete('/adopcion/{adopcion}', 'AdopcionController@destroy')->name('adopcion.destroy');
+
 Auth::routes();

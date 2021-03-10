@@ -119,6 +119,7 @@ class AdopcionController extends Controller
      */
     public function update(Request $request, Adopcion $adopcion)
     {
+
         $data = $request->validate([
             'mascota' => 'required',
             'edad' => 'required',
@@ -130,7 +131,23 @@ class AdopcionController extends Controller
             'descripcion' => 'required',
         ]);
 
-        return $data;
+        if ($request['imagen']) {
+            $ruta_img = $request['imagen']->store('imagenes', 's3');
+            $adopcion->imagen = Storage::disk('s3')->url($ruta_img);
+        }
+
+        $adopcion->mascota = $data['mascota'];
+        $adopcion->edad = $data['edad'];
+        $adopcion->peso = $data['peso'];
+        $adopcion->sexo = $data['sexo'];
+        $adopcion->tipo = $data['tipo'];
+        $adopcion->descripcion = $data['descripcion'];
+        $adopcion->vacunado = $data['vacunado'];
+        $adopcion->desparasitado = $data['desparasitado'];
+
+        $adopcion->save();
+
+        return redirect()->action('AdopcionController@index');
     }
 
     /**
@@ -141,6 +158,7 @@ class AdopcionController extends Controller
      */
     public function destroy(Adopcion $adopcion)
     {
-        //
+        $adopcion->delete();
+        return redirect()->action('AdopcionController@index');
     }
 }
