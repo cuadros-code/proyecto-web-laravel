@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', 'AdminController@index')->name('home.index');
+
+
+//- Adopcion
 Route::get('/adopcion', 'AdopcionController@index')->name('adopcion.index');
 
 Route::get('/adopcion/create', 'AdopcionController@create')->name('adopcion.create');
