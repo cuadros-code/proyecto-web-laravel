@@ -63,13 +63,36 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a href="{{ route('adopcion.index') }}" class="nav-link">Publicaciones</a>
+
+                            @role('administrator')
+
+                            <li class="nav-item dropdown mr-3">
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Administración <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                                    <a href="{{ url('panel') }}" class="dropdown-item">Administrador de Permisos</a>
+
+
+                                    <a href="{{ route('admin.index') }}" class="dropdown-item">Panel de Control</a>
+
+                                </div>
+                            </li>
+                            @endrole
+
+                            <li class="nav-item mr-3">
+                                <a href="{{ route('adopcion.index') }}" class="nav-link">Mis Publicaciones</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item mr-3">
                                 <a href="{{ route('adopcion.create') }}" class="nav-link">Dar en adopción</a>
                             </li>
+
                             <li class="nav-item dropdown">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -84,7 +107,7 @@
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar Sesión') }}
                                     </a>
 

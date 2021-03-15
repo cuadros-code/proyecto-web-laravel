@@ -7,6 +7,9 @@ use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -27,7 +30,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::ADOPCION;
+    //- protected $redirectTo = RouteServiceProvider::ADOPCION;
+
+
+    protected function authenticated(Request $request, $user)
+    {
+
+
+        if (auth()->user()->activo == 0) {
+            Auth::logout();
+            return redirect('/');
+        }
+
+        if ($user->hasRole('administrator')) {
+
+            return redirect('/admin');
+        }
+
+        if ($user->hasRole('user')) {
+            return redirect('/adopcion');
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -37,23 +60,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    public function redirectToProvider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function handleProviderCallback()
-    {
-        // $user = Socialite::driver('google')->user();
-        
-        // return $user->getName();
-        // $user->token;
     }
 }

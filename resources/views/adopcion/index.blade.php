@@ -6,7 +6,7 @@
 
     <div class="col-md-10 mx-auto bg white p-3">
         <table class="table">
-            <thead class="bg-primary text-light">
+            <thead class="bg-color text-dark">
                 <tr>
                     <th scole="col" class="text-center">Foto</th>
                     <th scole="col" class="text-center">Nombre</th>

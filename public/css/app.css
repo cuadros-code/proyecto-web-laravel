@@ -110,6 +110,10 @@
   }
 }
 
+.bg-color {
+  background: #81DCE9;
+}
+
 .logo-inicio {
   position: relative;
   bottom: -7px;

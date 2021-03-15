@@ -22,6 +22,7 @@ class CreateAdopcionsTable extends Migration
             $table->string('tipo');
             $table->text('descripcion');
             $table->string('imagen');
+            $table->boolean('activo')->default(true);
             $table->string('vacunado');
             $table->string('desparasitado');
             $table->foreignId('user_id')->references('id')->on('users')->comment('el usuario que crea la adopcion');

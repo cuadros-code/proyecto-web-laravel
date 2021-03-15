@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', 'AdminController@index')->name('home.index');
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+
+Route::get('/admin/{user}', 'AdminController@deleteActivoUser')->name('admin.activo');
+
+Route::get('/admin/mascota/{adopcion}', 'AdminController@deleteActivoPet')->name('admin.activomascota');
 
 
 //- Adopcion

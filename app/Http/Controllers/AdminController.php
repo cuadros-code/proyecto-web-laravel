@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Adopcion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\User;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:administrator');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $mascotas = DB::table('adopcions')
+            ->where('activo', 1)
+            ->simplePaginate(3);
+
+        $users = DB::table('users')
+            ->where('id', '!=', auth()->user()->id)
+            ->where('activo', 1)
+            ->simplePaginate(3);
+
+        return view('admin.index')
+            ->with('users', $users)
+            ->with('mascotas', $mascotas);
     }
 
     /**
@@ -25,6 +44,26 @@ class AdminController extends Controller
     public function create()
     {
         //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+    //  * @param  \App\Admin  $admin
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteActivoUser(User $user)
+    {
+        $user->activo = 0;
+        $user->save();
+        return redirect()->action('AdminController@index');
+    }
+
+    public function deleteActivoPet(Adopcion $adopcion)
+    {
+        $adopcion->activo = 0;
+        $adopcion->save();
+        return redirect()->action('AdminController@index');
     }
 
     /**
@@ -69,7 +108,6 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admin)
     {
-        //
     }
 
     /**
@@ -80,6 +118,5 @@ class AdminController extends Controller
      */
     public function destroy(Admin $admin)
     {
-        //
     }
 }
