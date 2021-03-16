@@ -26,8 +26,12 @@
 
                         <td class="text-center align-middle botones-tabla">
 
-                            <a href="{{ route('admin.activo', ['user' => $user->id]) }}" class="btn btn-danger">Eliminar
-                                Usuario</a>
+                            {{-- <a href="{{ route('admin.activo', ['user' => $user->id]) }}" class="btn btn-danger">Eliminar
+                                Usuario</a> --}}
+
+                            <eliminar-usuario id-usuario={{ $user->id }}>
+                            </eliminar-usuario>
+
                         </td>
                     </tr>
                 @endforeach
@@ -60,9 +64,12 @@
                         </td>
 
                         <td class="text-center align-middle botones-tabla">
-                            <a href="{{ route('admin.activomascota', ['adopcion' => $mascota->id]) }}"
+                            {{-- <a href="{{ route('admin.activomascota', ['adopcion' => $mascota->id]) }}"
                                 class="btn btn-danger">Eliminar
-                                Mascota</a>
+                                Mascota</a> --}}
+
+                            <eliminar-mascota id-mascota={{ $mascota->id }}>
+                            </eliminar-mascota>
                         </td>
                     </tr>
                 @endforeach

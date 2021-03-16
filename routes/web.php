@@ -26,9 +26,9 @@ Route::get('/inicio', 'InicioController@index')->name('inicio.index');
 //- Admin
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-Route::get('/admin/{user}', 'AdminController@deleteActivoUser')->name('admin.activo');
+Route::delete('/admin/{user}', 'AdminController@deleteActivoUser')->name('admin.activo');
 
-Route::get('/admin/mascota/{adopcion}', 'AdminController@deleteActivoPet')->name('admin.activomascota');
+Route::delete('/admin/mascota/{adopcion}', 'AdminController@deleteActivoPet')->name('admin.activomascota');
 
 
 //- Adopcion

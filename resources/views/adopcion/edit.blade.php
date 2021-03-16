@@ -66,7 +66,7 @@
                                             <option value="macho" selected>Macho</option>
                                             <option value="hembra">Hembra</option>
                                         @endif
-                                        @if ($adopcion->tipo == 'hembra')
+                                        @if ($adopcion->sexo == 'hembra')
                                             <option value="macho">Macho</option>
                                             <option value="hembra" selected>Hembra</option>
                                         @endif

@@ -23,8 +23,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(VueSweetalert2)
-Vue.component('example-component', require('./components/ExampleComponent.vue').default)
 Vue.component('eliminar-receta', require('./components/EliminarReceta.vue').default)
+Vue.component('eliminar-usuario', require('./components/EliminarUsuario.vue').default)
+Vue.component('eliminar-mascota', require('./components/EliminarMascota.vue').default)
 
 // console.log(Vue.prototy}pe);
 /**

@@ -172,7 +172,7 @@ return [
          * Method to be called in the middleware return case.
          * Available: abort|redirect
          */
-        'handling' => 'abort',
+        'handling' => 'redirect',
 
         /**
          * Handlers for the unauthorized method in the middlewares.
@@ -183,22 +183,10 @@ return [
              * Aborts the execution with a 403 code and allows you to provide the response text
              */
             'abort' => [
-                'code' => 403,
-                'message' => 'User does not have any of the necessary access rights.'
+                'code' => 403
             ],
-
-            /**
-             * Redirects the user to the given url.
-             * If you want to flash a key to the session,
-             * you can do it by setting the key and the content of the message
-             * If the message content is empty it won't be added to the redirection.
-             */
             'redirect' => [
-                'url' => '/home',
-                'message' => [
-                    'key' => 'error',
-                    'content' => ''
-                ]
+                'url' => '/login',
             ]
         ]
     ],

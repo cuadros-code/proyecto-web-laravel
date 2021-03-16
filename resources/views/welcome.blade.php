@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="button-banner">
-                <a href="" class="button">Adoptar</a>
+                <a href={{ url('/inicio') }} class="button">Adoptar</a>
 
                 <a href="{{ route('adopcion.create') }}" class="button">Dar en adopción</a>
             </div>
