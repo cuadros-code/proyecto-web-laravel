@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Adopcion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,7 @@ class AdopcionController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:user|administrator');
+        $this->middleware('role:user|administrator', ['except' => ['show']]);
     }
     /**
      * Display a listing of the resource.
@@ -22,13 +23,10 @@ class AdopcionController extends Controller
 
     public function index()
     {
-        // if (auth()->user()->activo == 0) {
-        //     Auth::logout();
-        //     return redirect('/');
-        // }
-
-        //- adopciones del usuario autenticado
-        $adopciones = auth()->user()->adopciones;
+        $adopciones = DB::table('adopcions')
+            ->where('user_id', auth()->user()->id)
+            ->where('activo', 1)
+            ->simplePaginate(3);
 
         return view('adopcion.index')->with('adopciones', $adopciones);
     }

@@ -39,6 +39,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $adopciones->links() }}
     </div>
 
 @endsection

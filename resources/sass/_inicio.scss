@@ -1,0 +1,14 @@
+.content-inicio-pet{
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 2rem;
+
+    .card{
+        box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.4);
+    }
+    img{
+        height: 300px;
+        object-fit: cover;
+    }
+}

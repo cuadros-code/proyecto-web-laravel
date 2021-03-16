@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//- Inicio
+
+Route::get('/inicio', 'InicioController@index')->name('inicio.index');
+
+
+//- Admin
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
 Route::get('/admin/{user}', 'AdminController@deleteActivoUser')->name('admin.activo');
