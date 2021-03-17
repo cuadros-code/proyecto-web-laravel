@@ -46,4 +46,11 @@ Route::put('/adopcion/{adopcion}', 'AdopcionController@update')->name('adopcion.
 
 Route::delete('/adopcion/{adopcion}', 'AdopcionController@destroy')->name('adopcion.destroy');
 
+//- Profile
+
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
+Route::get('/profile/create', 'ProfileController@create')->name('profile.create');
+
+
 Auth::routes();
