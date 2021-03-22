@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('imagen')->nullable();
             $table->text('bio')->nullable();
+            $table->text('ubicacion')->nullable();
             $table->timestamps();
         });
     }

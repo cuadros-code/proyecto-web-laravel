@@ -10,16 +10,26 @@ class InicioController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+    //  * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $mascotas = DB::table('adopcions')
-            ->where('activo', 1)
-            ->simplePaginate(20);
+        // return dd($request['tipo']);
 
-        return view('inicio.index')
-            ->with('mascotas', $mascotas);
+        if ($request['tipo'] === null || $request['tipo'] === 'todos') {
+            $mascotas = DB::table('adopcions')
+                ->where('activo', 1)
+                ->simplePaginate(20);
+            return view('inicio.index')
+                ->with('mascotas', $mascotas);
+        } else {
+            $mascotas = DB::table('adopcions')
+                ->where('activo', 1)
+                ->where('tipo', $request['tipo'])
+                ->simplePaginate(20);
+            return view('inicio.index')
+                ->with('mascotas', $mascotas);
+        }
     }
 
     /**
@@ -44,14 +54,14 @@ class InicioController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        dd($request['tipo']);
     }
 
     /**

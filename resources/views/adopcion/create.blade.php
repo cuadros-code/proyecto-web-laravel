@@ -4,6 +4,10 @@
 
     <div class="container py-3">
         <div class="row">
+            <a href="{{ route('adopcion.index') }}" class="btn btn-primary">
+                << Volver </a>
+        </div>
+        <div class="row">
             <div class="mx-auto col-sm-7">
                 <!-- form user info -->
                 <div class="card">

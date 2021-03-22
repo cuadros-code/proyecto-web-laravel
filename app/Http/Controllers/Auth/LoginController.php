@@ -39,7 +39,7 @@ class LoginController extends Controller
 
         if (auth()->user()->activo == 0) {
             Auth::logout();
-            return redirect('/');
+            return redirect('/register');
         }
 
         if ($user->hasRole('administrator')) {

@@ -2,13 +2,12 @@
 
 @section('content')
     {{-- {{ $adopcion }} --}}
-    <div class="container mt-4 ">
-
+    <div class="container pt-4 ">
         <div class="container-vista-mascota">
-
-
-            <div>
+            <div class="content-name-boton">
                 <p class="nombre-mascota">{{ $adopcion->mascota }}</p>
+                <a href="{{ route('profile.show', ['profile' => $dataCreador->id]) }}" class="btn btn-primary">Ver Datos
+                    de Contacto</a>
             </div>
 
             <div class="mascota-content p-1">
@@ -52,6 +51,10 @@
                     <div class="campo-info">
                         <label>Desparasitado</label>
                         <p>{{ $adopcion->desparasitado }}</p>
+                    </div>
+                    <div class="descripcion-mascota-show">
+                        <label>Descripción</label>
+                        <p>{{ $adopcion->descripcion }}</p>
                     </div>
 
 

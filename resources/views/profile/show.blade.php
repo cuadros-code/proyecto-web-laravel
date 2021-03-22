@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class=" mt-5">
         <div class="container emp-profile">
             <form method="post">
@@ -71,44 +72,7 @@
                                         @endif
                                     </div>
                                 </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-12 mt-4">
-
-                                        @if ($existePerfil)
-                                            <a type="submit" class="btn btn-primary"
-                                                href="{{ route('profile.edit', ['profile' => $dataProfile->id]) }}">
-                                                Editar Perfil
-                                            </a>
-                                        @else
-                                            <a type="submit" class="btn btn-primary" href="{{ route('profile.create') }}">
-                                                Completar Perfil
-                                            </a>
-                                        @endif
-
-
-                                        {{-- <form action="" method="post"> --}}
-                                        {{-- @method('delete') --}}
-                                        {{-- @csrf --}}
-
-                                        {{-- <perfil-usuario id-usuario={{ $dataProfile->id }}>
-                                        </perfil-usuario> --}}
-                                        @if ($dataProfile !== null)
-                                            <perfil-usuario id-profile={{ $dataProfile->id }}>
-                                            </perfil-usuario>
-                                        @endif
-
-                                        {{-- </form> --}}
-                                        {{-- <a type="submit" class="btn btn-danger"
-                                            href="{{ route('profile.delete', ['profile' => $userProfile->id]) }}">
-                                            Eliminar Perfil
-                                        </a> --}}
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

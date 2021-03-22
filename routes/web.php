@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
 //- Inicio
 
 Route::get('/inicio', 'InicioController@index')->name('inicio.index');
+
+Route::post('/inicio', 'InicioController@show')->name('inicio.show');
 
 
 //- Admin
@@ -46,11 +48,20 @@ Route::put('/adopcion/{adopcion}', 'AdopcionController@update')->name('adopcion.
 
 Route::delete('/adopcion/{adopcion}', 'AdopcionController@destroy')->name('adopcion.destroy');
 
-//- Profile
 
+//- Profile
 Route::get('/profile', 'ProfileController@index')->name('profile.index');
 
 Route::get('/profile/create', 'ProfileController@create')->name('profile.create');
 
+Route::post('/profile', 'ProfileController@store')->name('profile.store');
+
+Route::get('/profile/${profile}/edit', 'ProfileController@edit')->name('profile.edit');
+
+Route::put('/profile/${profile}', 'ProfileController@update')->name('profile.update');
+
+Route::get('/profile/${profile}', 'ProfileController@show')->name('profile.show');
+
+Route::delete('/profile/{profile}', 'ProfileController@destroy')->name('profile.destroy');
 
 Auth::routes();

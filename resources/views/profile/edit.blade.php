@@ -3,8 +3,10 @@
 @section('content')
     <div class=" mt-5">
         <div class="container emp-profile">
-            <form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('profile.update', ['profile' => $dataProfile->id]) }}"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
@@ -20,6 +22,7 @@
                         <div class="form-group mt-4">
                             <div class="">
                                 <input type="file" name="imagen" id="imagen" class="form-control">
+
                             </div>
                         </div>
 
@@ -76,6 +79,12 @@
                                     <div class="col-md-6">
                                         <input id="celular" name="celular" class="form-control" type="number"
                                             value={{ $userProfile->telefono }}>
+
+                                        @error('celular')
+                                            <span class="invalid-feedback d-block" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -94,6 +103,11 @@
                                     <div class="col-md-6">
                                         <input id="Ubicación" name="ubicacion" value="{{ $ubicacion }}"
                                             class="form-control" type="text">
+                                        @error('ubicacion')
+                                            <span class="invalid-feedback d-block" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -103,6 +117,12 @@
                                     <div class="col-md-6">
                                         <textarea class="form-control" name="bio" id="bio" cols="30"
                                             rows="5"> @if ($dataProfile !== null){{ $dataProfile->bio }}@else @endif</textarea>
+
+                                        @error('bio')
+                                            <span class="invalid-feedback d-block" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
