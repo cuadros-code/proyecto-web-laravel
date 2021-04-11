@@ -81,13 +81,24 @@ class ProfileController extends Controller
          ->where('id', $user)
          ->get();
 
+      // dd($userProfile[0]);
+
       $dataProfile = DB::table('profiles')
          ->where('user_id', $userProfile[0]->id)
-         ->get();;
+         ->get();
 
-      return view('profile.show')
-         ->with('userProfile', $userProfile[0])
-         ->with('dataProfile', $dataProfile[0]);
+      // dd($dataProfile->isEmpty());
+
+
+      if ($dataProfile->isEmpty()) {
+         return view('profile.show')
+            ->with('userProfile', $userProfile[0])
+            ->with('dataProfile', null);
+      } else {
+         return view('profile.show')
+            ->with('userProfile', $userProfile[0])
+            ->with('dataProfile', $dataProfile[0]);
+      }
    }
 
    /**

@@ -58,7 +58,7 @@ class AdopcionController extends Controller
       'vacunado' => 'required',
       'desparasitado' => 'required',
       'descripcion' => 'required',
-      'imagen' => 'image|mimes:jpeg,png,jpg,git,svg|required'
+      // 'imagen' => 'image|required'
     ]);
 
     // $ruta_img = $request['imagen']->store('imagenes', 's3');

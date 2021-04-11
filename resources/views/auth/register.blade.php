@@ -10,7 +10,7 @@
                 <div class="">
                     <div class="">
                         <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name"
-                            {{-- value="{{ old('name') }}" --}} required autocomplete="name" autofocus placeholder="Nombre" value="admin">
+                            value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre">
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                 <div class="">
                     <div class="">
                         <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
-                            {{-- value="{{ old('email') }}" --}} value="admin@gmail.com" required autocomplete="email" placeholder="Email">
+                            value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                 <div class="">
                     <div class="">
                         <input id="telefono" type="number" class="@error('telefono') is-invalid @enderror" name="telefono"
-                            {{-- value="{{ old('telefono') }}" --}} value="123" required autocomplete="telefono"
+                            value="{{ old('telefono') }}" required autocomplete="telefono"
                             placeholder="Número de télefono">
 
                         @error('telefono')
@@ -51,7 +51,7 @@
 
                     <div class="">
                         <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password"
-                            required value="12345678" autocomplete="new-password" placeholder="Contraseña">
+                            required autocomplete="new-password" placeholder="Contraseña">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                 <div class="">
                     <div class="">
                         <input id="password-confirm" type="password" class="" name="password_confirmation" required
-                            value="12345678" autocomplete="new-password" placeholder="Confirmar contraseña">
+                            autocomplete="new-password" placeholder="Confirmar contraseña">
                     </div>
                 </div>
 

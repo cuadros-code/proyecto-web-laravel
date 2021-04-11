@@ -12,7 +12,7 @@
                             @if ($dataProfile !== null)
                                 <img src="{{ $dataProfile->imagen }}" alt="" />
                             @else
-                                <img src="https://vista-urbana.com/wp-content/uploads/2019/11/imagen-no-disponible.jpg"
+                                <img src="https://mi-mascota.s3.amazonaws.com/estaticos/foto-no-disponible.png"
                                     alt="" />
                             @endif
                         </div>

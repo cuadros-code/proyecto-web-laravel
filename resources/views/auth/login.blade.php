@@ -9,8 +9,8 @@
 
                 <div class="">
                     <div class="">
-                        <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email"
-                            value="kevin@gmail.com" required autofocus placeholder="Email">
+                        <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" required
+                            value="{{ old('email') }}" autofocus placeholder="Email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
 
                     <div class="">
                         <input id="password" type="password" class=" @error('password') is-invalid @enderror"
-                            name="password" required placeholder="Contraseña" value="12345678">
+                            name="password" required placeholder="Contraseña">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
